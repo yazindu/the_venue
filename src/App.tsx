@@ -1,3 +1,4 @@
+import './resources/styles.css'
 
 function App() {
 
