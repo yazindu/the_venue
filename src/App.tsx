@@ -1,10 +1,12 @@
 import './resources/styles.css'
 
+import {Header} from './components/header_footer/Header.tsx'
+
 function App() {
 
-  return (
-      <h1>Hi</h1>
-  )
+    return (
+        <Header/>
+    )
 }
 
 export default App
