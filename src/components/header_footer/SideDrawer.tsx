@@ -34,7 +34,7 @@ export const SideDrawer = ({open, onClose}: SideDrawerProps) => {
             onClose={() => onClose(false)}
         >
             <List component={'nav'}>
-                {/*<ListItembutton onClick={()=>alert('click')}>*/}
+                {/*<ListItemButton onClick={()=>alert('click')}>*/}
                     {links.map(item => renderItem(item))}
             </List>
         </Drawer>

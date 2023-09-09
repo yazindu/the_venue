@@ -11,7 +11,7 @@ export const Header = () => {
     const [headerShow, setHeaderShow] = useState(false)
 
     const handleScroll = () => {
-        console.log(window.scrollY) // Window is pretty much equal to the browser.
+        //console.log(window.scrollY) // Window is pretty much equal to the browser.
         if(window.scrollY > 0){
             setHeaderShow(true)
         } else {
