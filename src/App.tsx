@@ -3,6 +3,7 @@ import './resources/styles.css'
 import {Header} from './components/header_footer/Header.tsx'
 import {Footer} from "./components/header_footer/Footer.tsx";
 import {Featured} from "./components/featured";
+import {VenueInfo} from "./components/venueInfo";
 
 function App() {
 
@@ -11,6 +12,9 @@ function App() {
             <Header/>
             <>
                 <Featured/>
+            </>
+            <>
+                <VenueInfo/>
             </>
             <div style={{backgroundColor: "purple", height: '800px'}}></div>
             <div style={{backgroundColor: "green", height: '800px'}}></div>
