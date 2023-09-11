@@ -1,5 +1,5 @@
 import {Slide} from "react-awesome-reveal";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 export const TimeUntil = () => {
 
@@ -21,7 +21,7 @@ export const TimeUntil = () => {
         </div>
     )
 
-    const getTimeUntil = (deadline: string) => {
+    const getTimeUntil = useCallback((deadline: string) => {
         const time = Date.parse(deadline) - Date.parse(new Date().toString())
         if (time < 0) {
             console.log('date passed')
@@ -33,16 +33,15 @@ export const TimeUntil = () => {
             console.log(seconds, minutes, hours, days)
             setTime({seconds, minutes, hours, days})
         }
-    }
-
-    // const [setIntervalRef, setSetIntervalRef] = useState(1)
+    }, [])
 
     useEffect(() => {
-        let i = setInterval(() => getTimeUntil('Nov, 20, 2023, 01:20:00'), 1000)
-    }, [getTimeUntil])
+        const intervalId = setInterval(() => getTimeUntil('Nov, 20, 2023, 01:20:00'), 1000)
+        return () => clearInterval(intervalId);
+    }, [])
 
     return (
-        <Slide left delay={1000}>
+        <Slide direction={'left'} delay={1000}>
             <div className={'countdown_wrapper'}>
                 <div className={'countdown_top'}>
                     Event starts in
