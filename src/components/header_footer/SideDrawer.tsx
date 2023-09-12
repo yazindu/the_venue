@@ -1,7 +1,7 @@
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import {ListItemButton, ListItemText} from "@mui/material";
+import {ListItemButton} from "@mui/material";
 
 type SideDrawerProps = {
     open: boolean
@@ -11,7 +11,7 @@ type SideDrawerProps = {
 export const SideDrawer = ({open, onClose}: SideDrawerProps) => {
     const links = [
         {where: 'featured', value: 'To top'},
-        {where: 'venuenfo', value: 'Venue NFO'},
+        {where: 'venueInfo', value: 'Venue NFO'},
         {where: 'highlights', value: 'Highlights'},
         {where: 'pricing', value: 'Pricing'},
         {where: 'location', value: 'Location'},
