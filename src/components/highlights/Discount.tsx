@@ -48,10 +48,11 @@ export const Discount = () => {
                             link={'http://google.com'}
                             size={'small'}
                             style={{
-                                background: '#8e8e8e',
+                                background: '#ffa800',
                                 color: '#ffffff'
                             }}
                         />
+
                     </div>
                 </Slide>
             </div>
