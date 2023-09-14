@@ -30,7 +30,7 @@ export const TimeUntil = () => {
             const minutes = Math.floor((time / 1000 / 60) % (60))
             const hours = Math.floor((time / (1000 * 60 * 60)) % (24))
             const days = Math.floor((time / (1000 * 60 * 60 * 24)))
-            console.log(seconds, minutes, hours, days)
+            // console.log(seconds, minutes, hours, days)
             setTime({seconds, minutes, hours, days})
         }
     }, [])

@@ -2,6 +2,7 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import {ListItemButton} from "@mui/material";
+import {scroller} from "react-scroll"
 
 type SideDrawerProps = {
     open: boolean
@@ -17,9 +18,19 @@ export const SideDrawer = ({open, onClose}: SideDrawerProps) => {
         {where: 'location', value: 'Location'},
     ]
 
+    const scrollToElement = (element: string) => {
+        scroller.scrollTo(element, {
+            duration:1500,
+            delay:100,
+            smooth:true,
+            offset: -150
+        })
+        onClose(false)
+    }
+
     const renderItem = (item: { where: string, value: string }) =>
         (<ListItem>
-                <ListItemButton key={item.where} onClick={() => alert(item.where)}>
+                <ListItemButton key={item.where} onClick={() => scrollToElement(item.where)}>
                     {/*<ListItemText primary="Inbox"/>*/}
                     {item.value}
                 </ListItemButton>
@@ -35,7 +46,7 @@ export const SideDrawer = ({open, onClose}: SideDrawerProps) => {
         >
             <List component={'nav'}>
                 {/*<ListItemButton onClick={()=>alert('click')}>*/}
-                    {links.map(item => renderItem(item))}
+                {links.map(item => renderItem(item))}
             </List>
         </Drawer>
     )
