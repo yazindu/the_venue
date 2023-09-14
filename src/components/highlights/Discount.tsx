@@ -51,6 +51,7 @@ export const Discount = () => {
                                 background: '#ffa800',
                                 color: '#ffffff'
                             }}
+                            iconTicket={true}
                         />
 
                     </div>

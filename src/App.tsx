@@ -5,6 +5,7 @@ import {Footer} from "./components/header_footer/Footer.tsx";
 import {Featured} from "./components/featured";
 import {VenueInfo} from "./components/venueInfo";
 import {Highlights} from "./components/highlights";
+import {Pricing} from "./components/pricing";
 
 function App() {
 
@@ -19,6 +20,9 @@ function App() {
             </>
             <>
                 <Highlights/>
+            </>
+            <>
+                <Pricing/>
             </>
             <div style={{backgroundColor: "purple", height: '800px'}}></div>
             <div style={{backgroundColor: "green", height: '800px'}}></div>
