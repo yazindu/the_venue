@@ -1,4 +1,5 @@
 import {Zoom} from "react-awesome-reveal";
+import {MyButton} from "../utils/MyButton.tsx";
 
 export const Pricing = () => {
     const pricesState = {
@@ -14,10 +15,15 @@ export const Pricing = () => {
             <Zoom key={index + Date()} className={'pricing_item'} delay={pricesState.delay[index]}>
                 <div className={'pricing_inner_wrapper'}>
                     <div className={'pricing_title'}>
-                        <span>{`${pricesState.prices[index]}`}</span>
-                        <span>{`${pricesState.position[index]}`}</span>
+                        <span>${pricesState.prices[index]}</span>
+                        <span>{pricesState.position[index]}</span>
                     </div>
-
+                    <div className={'pricing_description'}>
+                        {pricesState.desc[index]}
+                    </div>
+                    <div className={'pricing_buttons'}>
+                        <MyButton text={'Purchase'} link={pricesState.linkTo[index]} size={'large'} iconTicket={false}/>
+                    </div>
                 </div>
             </Zoom>
         ))
