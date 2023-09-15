@@ -14,10 +14,13 @@ export const Discount = () => {
     useEffect(() => {
         if (start > 0 && start < 30) {
             setTimeout(() => {
-                setStart(prevState => prevState + 1)
+                setStart(prevState => {
+                    if (prevState < 30) return prevState + 1
+                    else return prevState
+                })
             }, 30)
         }
-    },[start])
+    }, [start])
 
     return (
         <div className={'center_wrapper'}>
