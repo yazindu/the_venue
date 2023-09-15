@@ -11,7 +11,7 @@ export const Pricing = () => {
     }
 
     const showBoxes = () => (
-        pricesState.prices.map((box, index) => (
+        pricesState.prices.map((_, index) => (
             <Zoom key={index + Date()} className={'pricing_item'} delay={pricesState.delay[index]}>
                 <div className={'pricing_inner_wrapper'}>
                     <div className={'pricing_title'}>
@@ -22,7 +22,7 @@ export const Pricing = () => {
                         {pricesState.desc[index]}
                     </div>
                     <div className={'pricing_buttons'}>
-                        <MyButton text={'Purchase'} link={pricesState.linkTo[index]} size={'large'} iconTicket={false}/>
+                        <MyButton text={'Purchase'} link={pricesState.linkTo[index]} size={'large'} iconTicket={true}/>
                     </div>
                 </div>
             </Zoom>
