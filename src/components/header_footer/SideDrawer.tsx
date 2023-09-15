@@ -20,18 +20,17 @@ export const SideDrawer = ({open, onClose}: SideDrawerProps) => {
 
     const scrollToElement = (element: string) => {
         scroller.scrollTo(element, {
-            duration:1500,
-            delay:100,
-            smooth:true,
-            offset: -150
+            duration: 1500,
+            delay: 100,
+            smooth: true,
+            offset: -85
         })
         onClose(false)
     }
 
     const renderItem = (item: { where: string, value: string }) =>
-        (<ListItem>
+        (<ListItem key={item.where}>
                 <ListItemButton key={item.where} onClick={() => scrollToElement(item.where)}>
-                    {/*<ListItemText primary="Inbox"/>*/}
                     {item.value}
                 </ListItemButton>
             </ListItem>
@@ -45,7 +44,6 @@ export const SideDrawer = ({open, onClose}: SideDrawerProps) => {
             onClose={() => onClose(false)}
         >
             <List component={'nav'}>
-                {/*<ListItemButton onClick={()=>alert('click')}>*/}
                 {links.map(item => renderItem(item))}
             </List>
         </Drawer>
